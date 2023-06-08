@@ -1,5 +1,10 @@
-# Getting started
+---
+layout: home
+title: Getting Started
+nav_order: 1
+---
 
+# Getting started
 ## Intended Audience
 
 This guide is directed at **HTTP-based API** designers and writers wishing to benefit from having their API formalized in an **OpenAPI Description document**.
@@ -9,10 +14,10 @@ Machine-readable API descriptions are ubiquitous nowadays and **OpenAPI** is **t
 These pages are a companion to the [OpenAPI Specification](https://spec.openapis.org/oas/v3.1.0), helping the reader learn it and answering questions like "What is the best way to accomplish... ?" or "What is the purpose of... ?" that are naturally out of the scope of the specification.
 
 - If you are unsure if this guide is for you, read the next section below.
-- If you do not know what "API", "machine-readable description" or "OpenAPI" mean start by reading the [Introduction](introduction.md) chapter.
-- If this is your first time writing an **OpenAPI Description document** read [The OpenAPI Specification explained](specification.md) chapter for step-by-step tutorials.
-- If you already have **OpenAPI** experience but need help with a specific topic, take a look at the index of [The OpenAPI Specification explained](specification.md) chapter; it also includes advanced topics.
-- Finally, make sure you are aware of the recommended [Best Practices](best-practices.md) to take full advantage of **OpenAPI**!
+- If you do not know what "API", "machine-readable description" or "OpenAPI" mean start by reading the [Introduction](introduction) chapter.
+- If this is your first time writing an **OpenAPI Description document** read [The OpenAPI Specification explained](specification) chapter for step-by-step tutorials.
+- If you already have **OpenAPI** experience but need help with a specific topic, take a look at the index of [The OpenAPI Specification explained](specification) chapter; it also includes advanced topics.
+- Finally, make sure you are aware of the recommended [Best Practices](best-practices) to take full advantage of **OpenAPI**!
 - And of course, you can always refer to the actual [OpenAPI Specification](https://spec.openapis.org/oas/v3.1.0) for reference.
 
 ## Advantages of Using OpenAPI
@@ -30,7 +35,7 @@ Having your API formally described in a machine-readable format allows automated
 On top of this, the **OpenAPI Specification** also provides you with:
 
 - **A non-proprietary format**: You have a say in the future direction of the Specification!
-- **The most developed tooling ecosystem**: As a direct result of the previous statement, OpenAPI offers a vast number of tools to work with it. Just take a quick look at [OpenAPI.Tools](https://openapi.tools/).
-- **A format readable by both machines and humans**: Even though writing **OpenAPI** documents by hand is not the most convenient way of doing it (See [Best Practices](best-practices.md)), they are plain text files which can be easily browsed in case something needs to be debugged.
+- **The most developed tooling ecosystem**: As a direct result of the previous statement, OpenAPI offers a vast number of tools to work with it. Just take a quick look at [OpenAPI Tooling](https://tools.openapis.org).
+- **A format readable by both machines and humans**: Even though writing **OpenAPI** documents by hand is not the most convenient way of doing it (See [Best Practices](best-practices)), they are plain text files which can be easily browsed in case something needs to be debugged.
 
 So, choose your desired entry point from the list at the top of this page and start your journey!

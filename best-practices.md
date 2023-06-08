@@ -1,6 +1,12 @@
+---
+layout: default
+title: Best Practices
+nav_order: 4
+---
+
 # Best Practices
 
-This page contains general pieces of advice which do not strictly belong to the [Specification Explained](specification.md) chapter because they are not directly tied to the OpenAPI Specification.
+This page contains general pieces of advice which do not strictly belong to the [Specification Explained](specification) chapter because they are not directly tied to the OpenAPI Specification.
 
 However, they greatly simplify creating and maintaining OpenAPI documents, so they are worth keeping in mind.
 
@@ -20,18 +26,20 @@ Therefore, unless these descriptive limitations are perfectly known and taken in
 
 Sometimes, however, since it is late in the process, it will be preferred to twist the API description so that it matches *more or less* the actual API. It goes without saying that this leads to **unintuitive and incomplete descriptions**, that will rarely scale in the future.
 
-Finally, there exist a number of [validation tools](https://openapi.tools/#data-validators) that can verify that the implemented code adheres to the OpenAPI description. Running these tools as part of a Continuous Integration process allows changing the OpenAPI document with peace of mind, since deviations in the code behavior will be promptly detected.
+Finally, there exist a number of [validation tools](https://tools.openapis.org/categories/data-validators) that can verify that the implemented code adheres to the OpenAPI description. Running these tools as part of a Continuous Integration process allows changing the OpenAPI document with peace of mind, since deviations in the code behavior will be promptly detected.
 
 > **Bottom line:**
-> OpenAPI opens the door to a [wealth of automated tools](https://openapi.tools). Make sure you use them!
+> OpenAPI opens the door to a [wealth of automated tools](https://tools.openapis.org). Make sure you use them!
 
 ## Keep a Single Source of Truth
 
-Regardless of your design approach (design-first of code-first) always keep a single source of truth, i.e., information should **not** be duplicated in different places. It is really the same concept used in programming, where repeated code should be moved to a common function.
+Regardless of your design approach (design-first or code-first) always keep a single source of truth, i.e., information should **not** be duplicated in different places. It is really the same concept used in programming, where repeated code should be moved to a common function.
 
 Otherwise, eventually one of the places will be updated while the other won't, leading to headaches... in the best of cases.
 
 For instance, it is also commonplace to use code annotations to generate an OpenAPI description and then commit the latter to source control while the former still lingers in the code. As a result, newcomers to the project will not know which one is actually in use and mistakes will be made.
+
+Alternatively, you can use a Continuous Integration test to ensure that the two sources stay consistent.
 
 ## Add OpenAPI Documents to Source Control
 
@@ -53,9 +61,9 @@ While there is nothing stopping you from doing this, and, in fact, hand-written 
 
 Instead, you should try the other existing creation methods and choose the one that better suits you and your team (No YAML or JSON knowledge needed!):
 
-- **OpenAPI Editors**: Be it [text editors](https://openapi.tools/#text-editors) or [GUI editors](https://openapi.tools/#gui-editors) they usually take care of repetitive tasks, allow you to keep a library of reusable components and provide real-time preview of the generated documentation.
+- **OpenAPI Editors**: Be it [text editors](https://tools.openapis.org/categories/text-editors) or [GUI editors](https://tools.openapis.org/categories/gui-editors) they usually take care of repetitive tasks, allow you to keep a library of reusable components and provide real-time preview of the generated documentation.
 
-- **Domain-Specific Languages**: As its name indicates, [DSL](https://openapi.tools/#dsl)'s are API description languages tailored to specific development fields. A tool is then used to produce the OpenAPI document. A new language has to be learned, but, in return, extremely concise descriptions can be achieved.
+- **Domain-Specific Languages**: As its name indicates, [DSL](https://tools.openapis.org/categories/dsl)'s are API description languages tailored to specific development fields. A tool is then used to produce the OpenAPI document. A new language has to be learned, but, in return, extremely concise descriptions can be achieved.
 
 - **Code Annotations**: Most programming languages allow you to _annotate_ the code, be it with specific syntax or with general code comments. These annotations, for example, can be used to extend a method signature with information regarding the API endpoint and HTTP method that lead to it. A tool can then parse the code annotations and generate OpenAPI documents automatically. This method fits very nicely with the code-first approach, so keep in mind the first advice given at the top of this page when using it (Use a Design-First Approach)...
 
@@ -65,7 +73,7 @@ Instead, you should try the other existing creation methods and choose the one t
 
 This is a collection of small hints related to working with large API description documents.
 
-- **Do not repeat yourself** (The DRY principle). If the same piece of YAML or JSON appears more than once in the document, it's time to move it to the `components` section and reference it from other places using `$ref` (See [Reusing Descriptions](specification-components.md). Not only will the resulting document be smaller but it will also be much easier to maintain).
+- **Do not repeat yourself** (The DRY principle). If the same piece of YAML or JSON appears more than once in the document, it's time to move it to the `components` section and reference it from other places using `$ref` (See [Reusing Descriptions](specification/components). Not only will the resulting document be smaller but it will also be much easier to maintain).
 
   Components can be referenced from other files, so you can even reuse them across different API documents!
 
@@ -75,7 +83,7 @@ This is a collection of small hints related to working with large API descriptio
 
   Bear in mind that some tools might have issues with large files, whereas some other tools might not handle too many files gracefully. The solution will have to take your toolkit into account.
 
-- **Use tags to keep things organized**: [Tags](https://spec.openapis.org/oas/v3.1.0#oasTags) have not been described in the Specification chapter, but they can help you arrange your operations and find them faster. A tag is simply a piece of metadata (a unique name and an optional description) that you can attach to [operations](specification-paths.md). Tools, specially [GUI editors](https://openapi.tools/#gui-editors), can then sort all your API's operation by their tags to help you keep them organized.
+- **Use tags to keep things organized**: [Tags](https://spec.openapis.org/oas/v3.1.0#oasTags) have not been described in the Specification chapter, but they can help you arrange your operations and find them faster. A tag is simply a piece of metadata (a unique name and an optional description) that you can attach to [operations](specification/paths). Tools, specially [GUI editors](https://tools.openapis.org/categories/gui-editors), can then sort all your API's operation by their tags to help you keep them organized.
 
 ## Links to External Best Practices
 

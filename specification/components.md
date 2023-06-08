@@ -1,8 +1,8 @@
 ---
-
+layout: default
+title: Reusing Description
 parent: The OpenAPI Specification Explained
 nav_order: 5
-
 ---
 
 # Reusing Descriptions
@@ -15,8 +15,8 @@ The [Components Object](https://spec.openapis.org/oas/v3.1.0#components-object),
 accessible through the `components` field in the root [OpenAPI Object](https://spec.openapis.org/oas/v3.1.0#openapi-object), contains definitions for objects to be reused in other parts of the document.
 
 <figure style="text-align:center">
-   <object type="image/svg+xml" data="img/components-object.svg"></object>
-  <figcaption>The OpenAPI Object is explained in the <a href="specification-structure.html">Structure of an OpenAPI Document</a> page.<br/>The Schema Object is explained in the <a href="specification-content.html">Content of Message Bodies</a> page.<br/>The Response Object is explained in the <a href="specification-paths.html">API Endpoints</a> page.<br/>The Parameter Object is explained in the <a href="specification-parameters.html">Parameters and Payload of an Operation</a> page.</figcaption>
+   <object type="image/svg+xml" data="{{site.baseurl}}/img/components-object.svg"></object>
+  <figcaption>The OpenAPI Object is explained in the <a href="structure.html">Structure of an OpenAPI Document</a> page.<br/>The Schema Object is explained in the <a href="content.html">Content of Message Bodies</a> page.<br/>The Response Object is explained in the <a href="paths.html">API Endpoints</a> page.<br/>The Parameter Object is explained in the <a href="parameters.html">Parameters and Payload of an Operation</a> page.</figcaption>
 </figure>
 
 Most objects in an OpenAPI document can be replaced by a **reference** to a **component**, drastically reducing the document's size and maintenance cost (just like methods do in programming languages).
@@ -97,7 +97,7 @@ Note also how the `coordinate` schema is used twice (in the `rowParam` and `colu
 
 ## Tic Tac Toe Example
 
-The complete [Tic Tac Toe sample API](examples/tictactoe.yaml) (not included here for brevity) makes heavy use of components. Note for example how different endpoints return a `#/components/schemas/status` on success, or a `#/components/schemas/errorMessage` on error.
+The complete [Tic Tac Toe sample API](/examples/tictactoe.yaml) (not included here for brevity) makes heavy use of components. Note for example how different endpoints return a `#/components/schemas/status` on success, or a `#/components/schemas/errorMessage` on error.
 
 ## Summary
 
@@ -111,4 +111,4 @@ This page has shown that:
 - Components can be referenced from any place where an object of the same type is expected using `$ref`.
 - References are actually URIs so they are very flexible.
 
-[The next page](specification-docs.md) explains how to include documentation and examples in an OpenAPI document.
+[The next page](docs) explains how to include documentation and examples in an OpenAPI document.

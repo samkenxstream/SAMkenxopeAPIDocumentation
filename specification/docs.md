@@ -1,8 +1,8 @@
 ---
-
+layout: default
+title: Providing Documentation and Examples
 parent: The OpenAPI Specification Explained
 nav_order: 6
-
 ---
 
 # Providing Documentation and Examples
@@ -166,7 +166,7 @@ schema:
 
 On the other hand, the `examples` field (found in [Parameter](https://spec.openapis.org/oas/v3.1.0#parameterExample) and [Media Type](https://spec.openapis.org/oas/v3.1.0#mediaTypeExample) Objects) is a map pairing an example name with an [Example Object](https://spec.openapis.org/oas/v3.1.0#example-object). This object provides a `summary` and a `description` for the example along with the actual code (inside the `value` field or as an external reference in the `externalValue` field, but not both).
 
-This is a snippet from the [Tic Tac Toe sample API](examples/tictactoe.yaml):
+This is a snippet from the [Tic Tac Toe sample API](/examples/tictactoe.yaml):
 
 ```yaml
 responses:
@@ -195,4 +195,4 @@ This page has shown the features provided by OpenAPI to aid in the documentation
 - Text can use rich formatting using **CommonMark** syntax, quickly summarized in this page.
 - Documentation can be extended with sample code using the `example` or `examples` fields.
 
-[The next page](specification-servers.md) shows how to specify the server where the API can be accessed.
+[The next page](servers) shows how to specify the server where the API can be accessed.
